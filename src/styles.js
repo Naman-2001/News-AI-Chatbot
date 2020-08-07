@@ -31,7 +31,7 @@ export default makeStyles((theme) => ({
     padding: "3%",
     borderRadius: 10,
     color: "white",
-    backgroundColor: "rgba(21, 101, 192)",
+    background: " linear-gradient(35deg, rgba(21, 101, 192), rgb(47, 21, 192))",
     margin: "0 12px",
     textAlign: "center",
     height: "25vmin",
@@ -66,7 +66,7 @@ export default makeStyles((theme) => ({
   },
   alanLogo: {
     height: "27vmin",
-    borderRadius: "15%",
+    borderRadius: "50%",
     padding: "0 5%",
     margin: "3% 0",
     [theme.breakpoints.down("sm")]: {
