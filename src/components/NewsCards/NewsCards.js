@@ -49,12 +49,12 @@ const NewsCards = ({ articles, activeArticle }) => {
                   {infoCard.title}
                 </Typography>
                 {infoCard.info && (
-                  <Typography variant="subtitle1" component="subtitle1">
+                  <Typography variant="subtitle1" component="h6">
                     <strong>{infoCard.title.split(" ")[2]}</strong>: <br />
                     {infoCard.info}
                   </Typography>
                 )}
-                <Typography variant="subtitle1" component="subtitle1">
+                <Typography variant="subtitle1" component="h6">
                   Try saying: <br /> <i>{infoCard.text}</i>
                 </Typography>
               </div>
@@ -75,7 +75,12 @@ const NewsCards = ({ articles, activeArticle }) => {
       >
         {articles.map((article, i) => (
           <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: "flex" }}>
-            <NewsCard activeArticle={activeArticle} i={i} article={article} />
+            <NewsCard
+              key={i}
+              activeArticle={activeArticle}
+              i={i}
+              article={article}
+            />
           </Grid>
         ))}
       </Grid>
