@@ -1,80 +1,128 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import useStyles from "./styles";
+import Button from "@material-ui/core/Button";
+import { Typography } from "@material-ui/core";
+
 const Country = ({ country, onChangeCountry }) => {
   const handleSelect = (e) => {
     // console.log(e.target.value);
     onChangeCountry(e.target.value);
   };
 
+  const classes = useStyles();
+
   return (
-    <div className="container">
-      <label htmlFor="country">Country</label>
-      <select name="country" id="country" onChange={handleSelect}>
-        <option value="-1">--Country--</option>
-        <option value="ar">Argentina</option>
-        <option value="au">Australia</option>
-        <option value="at">Austria</option>
-        <option value="be">Belgium</option>
-        <option value="br">Brazil</option>
-        <option value="bg">Bulgaria</option>
-        <option value="ca">Canada</option>
-        <option value="cn">China</option>
-        <option value="co">Colombia</option>
-        <option value="cu">Cuba</option>
-        <option value="cz">Czech Republic</option>
-        <option value="eg">Egypt</option>
-        <option value="fr">France</option>
-        <option value="de">Germany</option>
-        <option value="gr">Greece</option>
-        <option value="hk">Hong Kong</option>
-        <option value="hu">Hungary</option>
-        <option value="in">India</option>
-        <option value="id">Indonesia</option>
-        <option value="ie">Ireland</option>
-        <option value="il">Israel</option>
-        <option value="it">Italy</option>
-        <option value="jp">Japan</option>
-        <option value="lv">Latvia</option>
-        <option value="lt">Lithuania</option>
-        <option value="my">Malaysia</option>
-        <option value="mx">Mexico</option>
-        <option value="ma">Morocco</option>
-        <option value="nl">Netherlands</option>
-        <option value="nz">New zealand</option>
-        <option value="ng">Nigeria</option>
-        <option value="no">Norway</option>
-        <option value="ph">Philippines</option>
-        <option value="pl">Poland</option>
-        <option value="pt">Portugal</option>
-        <option value="ro">Romania</option>
-        <option value="ru">Russia</option>
-        <option value="sa">Saudi Arabia</option>
-        <option value="rs">Serbia</option>
-        <option value="sg">Singapore</option>
-        <option value="sk">Slovakia</option>
-        <option value="si">Slovenia</option>
-        <option value="za">South Africa</option>
-        <option value="kr">South Korea</option>
-        <option value="se">Sweden</option>
-        <option value="ch">Switzerland</option>
-        <option value="tw">Taiwan</option>
-        <option value="th">Thailand</option>
-        <option value="tr">Turkey</option>
-        <option value="ae">UAE</option>
-        <option value="ua">Ukraine</option>
-        <option value="gb">United Kingdom</option>
-        <option value="us">United States</option>
-        <option value="ve">Venuzuela</option>
-      </select>
-      <Link to="/home">
-        <button type="submit">Proceed</button>
-      </Link>
+    <div>
+      <div className={classes.logoContainer}>
+        <img
+          // src="https://alan.app/voice/images/previews/preview.jpg"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/07712d52323517.5608d99892165.png"
+          alt="jarvis-logo"
+          className={classes.alanLogo}
+        />
+      </div>
+      <div className={classes.mydiv}>
+        <div className={classes.place}>
+          <div className={classes.uppernav}>
+            <Typography className={classes.header} variant="h5" component="h5">
+              Select Country
+            </Typography>
+          </div>
+
+          <FormControl className={classes.formControl}>
+            <InputLabel id="demo-simple-select-autowidth-label">
+              Country
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-autowidth-label"
+              id="demo-simple-select-autowidth"
+              value={country}
+              onChange={handleSelect}
+              autoWidth
+            >
+              <MenuItem value="">
+                <em>International</em>
+              </MenuItem>
+              <MenuItem value={"ar"}>Argentina</MenuItem>
+              <MenuItem value={"au"}>Australia</MenuItem>
+              <MenuItem value={"at"}>Austria</MenuItem>
+              <MenuItem value={"be"}>Belgium</MenuItem>
+              <MenuItem value={"br"}>Brazil</MenuItem>
+              <MenuItem value={"bg"}>Bulgaria</MenuItem>
+              <MenuItem value={"ca"}>Canada</MenuItem>
+              <MenuItem value={"cn"}>China</MenuItem>
+              <MenuItem value={"co"}>Colombia</MenuItem>
+              <MenuItem value={"cu"}>Cuba</MenuItem>
+              <MenuItem value={"cz"}>Czech Republic</MenuItem>
+              <MenuItem value={"eg"}>Egypt</MenuItem>
+              <MenuItem value={"fr"}>France</MenuItem>
+              <MenuItem value={"de"}>Germany</MenuItem>
+              <MenuItem value={"gr"}>Greece</MenuItem>
+              <MenuItem value={"hk"}>Hong Kong</MenuItem>
+              <MenuItem value={"hu"}>Hungary</MenuItem>
+              <MenuItem value={"in"}>India</MenuItem>
+              <MenuItem value={"id"}>Indonesia</MenuItem>
+              <MenuItem value={"ie"}>Ireland</MenuItem>
+              <MenuItem value={"il"}>Israel</MenuItem>
+              <MenuItem value={"it"}>Italy</MenuItem>
+              <MenuItem value={"jp"}>Japan</MenuItem>
+              <MenuItem value={"lv"}>Latvia</MenuItem>
+              <MenuItem value={"lt"}>Lithuania</MenuItem>
+              <MenuItem value={"my"}>Malaysia</MenuItem>
+              <MenuItem value={"mx"}>Mexico</MenuItem>
+              <MenuItem value={"ma"}>Morocco</MenuItem>
+              <MenuItem value={"nl"}>Netherlands</MenuItem>
+              <MenuItem value={"nz"}>New zealand</MenuItem>
+              <MenuItem value={"ng"}>Nigeria</MenuItem>
+              <MenuItem value={"no"}>Norway</MenuItem>
+              <MenuItem value={"ph"}>Philippines</MenuItem>
+              <MenuItem value={"pl"}>Poland</MenuItem>
+              <MenuItem value={"pt"}>Portugal</MenuItem>
+              <MenuItem value={"ro"}>Romania</MenuItem>
+              <MenuItem value={"ru"}>Russia</MenuItem>
+              <MenuItem value={"sa"}>Saudi Arabia</MenuItem>
+              <MenuItem value={"rs"}>Serbia</MenuItem>
+              <MenuItem value={"sg"}>Singapore</MenuItem>
+              <MenuItem value={"sk"}>Slovakia</MenuItem>
+              <MenuItem value={"si"}>Slovenia</MenuItem>
+              <MenuItem value={"za"}>South Africa</MenuItem>
+              <MenuItem value={"kr"}>South Korea</MenuItem>
+              <MenuItem value={"se"}>Sweden</MenuItem>
+              <MenuItem value={"ch"}>Switzerland</MenuItem>
+              <MenuItem value={"tw"}>Taiwan</MenuItem>
+              <MenuItem value={"th"}>Thailand</MenuItem>
+              <MenuItem value={"tr"}>Turkey</MenuItem>
+              <MenuItem value={"ae"}>UAE</MenuItem>
+              <MenuItem value={"ua"}>Ukraine</MenuItem>
+              <MenuItem value={"gb"}>United Kingdom</MenuItem>
+              <MenuItem value={"us"}>United States</MenuItem>
+              <MenuItem value={"ve"}>Venuzuela</MenuItem>
+            </Select>
+          </FormControl>
+          <Link className={classes.link} to="/home">
+            <Button
+              variant="contained"
+              className={classes.button}
+              disableElevation
+            >
+              Submit
+            </Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Country;
+
+//Alterative to BrowserRouter
 
 // onClick={handleProceed}
 
@@ -84,13 +132,13 @@ export default Country;
         <form action="">
           <label htmlFor="country">Country</label>
           <select name="country" id="country" onChange={handleSelect}>
-            <option value="-1">--Country--</option>
-            <option value="in">India</option>
-            <option value="jp">Japan</option>
-            <option value="us">USA</option>
-            <option value="br">Brazil</option>
-            <option value="ch">China</option>
-            <option value="sr">Sri lanka</option>
+            <MenuItem value={-1">--Country--</MenuItem>
+            <MenuItem value={in">India</MenuItem>
+            <MenuItem value={jp">Japan</MenuItem>
+            <MenuItem value={us">USA</MenuItem>
+            <MenuItem value={br">Brazil</MenuItem>
+            <MenuItem value={ch">China</MenuItem>
+            <MenuItem value={sr">Sri lanka</MenuItem>
           </select>
           <button type="submit" onClick={handleProceed}>
             Proceed

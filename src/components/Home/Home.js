@@ -37,10 +37,10 @@ const Home = ({ country }) => {
           }
         }
       },
-    });
+    }).setVisualState({ answer: country });
   }, []);
 
-  console.log(country);
+  // console.log(country);
 
   return (
     <div>
