@@ -12,8 +12,8 @@ export default makeStyles((theme) => ({
   place: {
     justifyContent: "space-around",
     backgroundColor: "white",
-    height: "250px",
-    width: "200px",
+    height: "300px",
+    width: "300px",
     textAlign: "center",
     borderRadius: "5px",
     paddingBottom: "30px",
@@ -60,6 +60,7 @@ export default makeStyles((theme) => ({
     },
   },
   mydiv: {
+    marginTop: "30px",
     padding: "0 5%",
     display: "flex",
     justifyContent: "space-around",
