@@ -5,7 +5,12 @@ import NewsCard from "../NewsCard/NewsCard";
 import useStyles from "./styles.js";
 
 const infoCards = [
-  { color: "#00838f", title: "Latest News", text: "Give me the latest news" },
+  {
+    color: "#00838f",
+    title: "Latest News",
+    info: "For latest news a country should be selected not international",
+    text: "Give me the latest news",
+  },
   {
     color: "#1565c0",
     title: "News by Categories",
@@ -50,7 +55,12 @@ const NewsCards = ({ articles, activeArticle }) => {
                 </Typography>
                 {infoCard.info && (
                   <Typography variant="subtitle1" component="h6">
-                    <strong>{infoCard.title.split(" ")[2]}</strong>: <br />
+                    {infoCard.title === "Latest News" ? (
+                      <strong>Note : </strong>
+                    ) : (
+                      <strong>{infoCard.title.split(" ")[2]}:</strong>
+                    )}{" "}
+                    <br />
                     {infoCard.info}
                   </Typography>
                 )}

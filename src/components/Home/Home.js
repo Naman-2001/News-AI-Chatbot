@@ -4,6 +4,7 @@ import NewsCards from "../NewsCards/NewsCards";
 import wordsToNumbers from "words-to-numbers";
 import useStyles from "./styles.js";
 import { Typography } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 
 const Home = ({ country }) => {
   const alanKey =
@@ -38,10 +39,9 @@ const Home = ({ country }) => {
         }
       },
     }).setVisualState({ answer: country });
-  }, []);
+  }, [country]);
 
   // console.log(country);
-
   return (
     <div>
       <div className={classes.logoContainer}>
@@ -63,12 +63,24 @@ const Home = ({ country }) => {
             </div>
           </div>
         ) : null}
+
         <img
           // src="https://alan.app/voice/images/previews/preview.jpg"
           src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/07712d52323517.5608d99892165.png"
           alt="jarvis-logo"
           className={classes.alanLogo}
         />
+      </div>
+      <div className={classes.buttonDiv}>
+        <a href="/">
+          <Button
+            className={classes.button}
+            variant="contained"
+            disableElevation
+          >
+            Change Country
+          </Button>
+        </a>
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     </div>

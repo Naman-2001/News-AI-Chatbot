@@ -20,6 +20,17 @@ export default makeStyles((theme) => ({
     textDecoration: "none",
     color: "rgba(21, 101, 192)",
   },
+  buttonDiv: {
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+  },
+  button: {
+    margin: "20px 0",
+    background: "linear-gradient(35deg, rgb(192 102 21), rgb(152 21 192))",
+    color: "white",
+    fontWeight: "bold",
+  },
   image: {
     marginLeft: 20,
   },
@@ -74,3 +85,4 @@ export default makeStyles((theme) => ({
     },
   },
 }));
+//linear-gradient(35deg, rgb(192 102 21), rgb(152 21 192))

@@ -46,7 +46,7 @@ const Country = ({ country, onChangeCountry }) => {
               onChange={handleSelect}
               autoWidth
             >
-              <MenuItem value="">
+              <MenuItem value={"ww"}>
                 <em>International</em>
               </MenuItem>
               <MenuItem value={"ar"}>Argentina</MenuItem>
